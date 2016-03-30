@@ -31,4 +31,21 @@ class Person {
     	console.log(`${this.name} is dead.`);
       return false;
     }
+
   }
+spendMp(cost) {
+    if (this.mp < cost) {
+    	console.log(`not enough mp!`);
+      return false;
+    }
+    else {
+    	this.mp -= cost;
+      return true;
+    }
+  }
+  use(skillName, person) {
+    var skill = this.skills[skillName];
+    return skill.use(this, person);
+  }
+
+}
